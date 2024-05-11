@@ -111,7 +111,7 @@ async function addedMessageLinks(deep, messageText){
 
 // reply
 async function addedReplyLinks(deep, conversation, message){
-    const replyLinkTypeId = await deep.id('@deep-foundation/messaging', 'Reply');
+    const replyLinkTypeId = await deep.id('@deep-foundation/chatgpt-azure', 'Reply');
     const replyLink = (await deep.insert({
         type_id: replyLinkTypeId,
         from_id: message.id,
