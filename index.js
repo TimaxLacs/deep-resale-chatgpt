@@ -43,12 +43,12 @@ async function start(){
     }
 }
 async function newMessage(messageUser, spaceIdArgument, deepClient){
-    conversation = addedConversationLinks(deepClient);
-    addedContainLinks(spaceIdArgument, conversation, deepClient);
-    message = addedMessageLinks(deepClient, messageUser);
-    addedContainLinks(spaceIdArgument, message, deepClient);
-    reply = addedReplyLinks(deepClient, conversation, message);
-    addedContainLinks(spaceIdArgument, reply, deepClient);
+    conversation = await addedConversationLinks(deepClient);
+    await addedContainLinks(spaceIdArgument, conversation, deepClient);
+    message = await addedMessageLinks(deepClient, messageUser);
+    await addedContainLinks(spaceIdArgument, message, deepClient);
+    reply = await addedReplyLinks(deepClient, conversation, message);
+    await addedContainLinks(spaceIdArgument, reply, deepClient);
 }
 
 const makeDeepClient = token => {
